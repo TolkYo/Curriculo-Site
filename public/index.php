@@ -48,19 +48,39 @@
       <p>Busco oportunidade na área de desenvolvimento para aprimorar minhas habilidades e contribuir para os resultados da organização. Sou comunicativo, adaptável e gosto de trabalhar em equipe.</p>
     </div>
   </section>
-
-  <section id="habilidades">
-    <div class="container">
-      <h2>Habilidades Técnicas</h2>
-      <ul>
-        <li>PHP, JavaScript, HTML, Bootstrap, SQL - Intermediário</li>
-        <li>Linux - Intermediário</li>
-        <li>Java, C#, C++, Kotlin - Básico</li>
-        <li>Inglês - Intermediário</li>
-        <li>Boa comunicação, aprendizado rápido</li>
-      </ul>
+      <form id="zap-form">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm">
+              <section id="habilidades">
+                <div class="container">
+                  <h2>Habilidades Técnicas</h2>
+                  <ul>
+                    <li>PHP, JavaScript, HTML, Bootstrap, SQL, Linux - Intermediário</li>
+                    <li>Java, C#, C++, Kotlin - Básico</li>
+                    <li>Inglês - Avançado</li>
+                    <li>Boa comunicação, aprendizado rápido</li>
+                  </ul>
+                </div>
+              </section>
+            </div>
+      
+        <div class="col-sm">
+          <section id="bot-teste">
+            <label class="col-form-label"><b>Quer testar o meu bot de Whatsapp?</b></label>
+            <div class="form-input d-flex">
+              <input type="text" id="numero_zap" class="ms-2 me-2" placeholder="Digite seu Numero">
+              <button id="btn-entrar" class="btn btn-primary btn-sm" type="submit">Testar</button>
+            </div>
+            <div>
+              
+            </div>        
+          </section>
+        </div>
+      </form>
+      
     </div>
-  </section>
+  </div>    
 
   <section id="experiencia" class="bg-light">
     <div class="container">
@@ -76,7 +96,7 @@
   <section id="formacao">
     <div class="container">
       <h2>Formação Acadêmica</h2>
-      <p><strong>Faculdade Fametro:</strong> Análise e Desenvolvimento de Sistemas (2º período)</p>
+      <p><strong>Faculdade Fametro:</strong> Análise e Desenvolvimento de Sistemas (3º período)</p>
       <p><strong>Escola Raimundo Gomes Nogueira:</strong> Concluído em 2021</p>
     </div>
   </section>
@@ -85,10 +105,10 @@
     <div class="container">
       <h2>Projetos e Cursos</h2>
       <ul>
-        <li>Git: <a href="https://github.com/TolkYo">https://github.com/TolkYo</a></li>
+        <li><b>Git:</b> <a href="https://github.com/TolkYo">https://github.com/TolkYo</a></li>
         <li>Curso Kotlin para Android - Udemy</li>
         <li>Curso de Informática Básica - Senac</li>
-        <li>Criação de jogos eletrônicos e estudo de SQL</li>
+        <li>Curso de Criação de jogos eletrônicos</li>
       </ul>
     </div>
   </section>
@@ -103,5 +123,29 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 </html>
+
+  <script>
+    $('#zap-form').submit(function (e) {
+      e.preventDefault();
+      const numero = $('#numero_zap').val();
+      const msg = 'Mensagem Automática';
+
+      $.ajax({
+      url: 'http://localhost:3000/enviar',
+      type: 'POST',
+      data: JSON.stringify({ numero, msg}),
+      contentType: 'application/json; charset=utf-8',
+      success: function (res) {
+        alert('Mensagem enviada com sucesso!');
+      },
+      error: function (err) {
+        alert('Erro ao enviar mensagem');
+        console.error(err);
+      }
+    });
+  });
+  </script>
+

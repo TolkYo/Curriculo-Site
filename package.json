@@ -1,0 +1,16 @@
+{
+  "name": "bot-teste",
+  "version": "1.0.0",
+  "description": "node.js\r venom-bot",
+  "main": "script_bot.js",
+  "scripts": {
+    "start": "node bot"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "venom-bot": "^5.3.0"
+  }
+}
