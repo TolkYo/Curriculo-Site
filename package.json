@@ -1,16 +1,25 @@
 {
-  "name": "bot-teste",
+  "name": "whatsapp-bot-claudio",
   "version": "1.0.0",
-  "description": "node.js\r venom-bot",
-  "main": "script_bot.js",
+  "description": "Bot WhatsApp para currículo online do Cláudio Manoel",
+  "main": "whatsapp-server.js",
   "scripts": {
-    "start": "node bot"
+    "start": "node whatsapp-server.js",
+    "dev": "nodemon whatsapp-server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "whatsapp",
+    "bot",
+    "venom",
+    "curriculo"
+  ],
+  "author": "Cláudio Manoel",
   "dependencies": {
-    "express": "^5.1.0",
-    "venom-bot": "^5.3.0"
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "venom-bot": "^5.0.9"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }
