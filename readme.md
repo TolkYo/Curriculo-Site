@@ -19,8 +19,3 @@ Este projeto é um **site de currículo** que utiliza **Node.js** e a biblioteca
 - Formulário de contato para envio de mensagens
 - Integração com **WhatsApp** via Venom-Bot
 - Envio automático de mensagens personalizadas
-
----
-
-## 📂 Estrutura do Projeto
-
